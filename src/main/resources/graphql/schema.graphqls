@@ -1,0 +1,20 @@
+type Film {
+    id: ID!
+    title: String!
+    releaseYear: Int!
+    actors: [Actor!]! # Exposé comme un champ virtuel
+}
+
+
+
+
+type Actor {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}
+
+type Query {
+    films: [Film!]!
+    film(id: ID!): Film
+}
