@@ -11,7 +11,7 @@ import java.time.Instant;
 @Setter
 @Entity
 @Table(name = "film_actor")
-public class git FilmActor {
+public class FilmActor {
     @EmbeddedId
     private FilmActorId id;
 
