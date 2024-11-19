@@ -1,4 +1,4 @@
-package fr.thomas.Filmtheque;
+package fr.thomas.Filmtheque.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,20 +10,20 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "film_actor")
-public class FilmActor {
+@Table(name = "film_category")
+public class FilmCategory {
     @EmbeddedId
-    private FilmActorId id;
-
-    @MapsId("actorId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "actor_id", nullable = false)
-    private Actor actor;
+    private FilmCategoryId id;
 
     @MapsId("filmId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "film_id", nullable = false)
     private Film film;
+
+    @MapsId("categoryId")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
     @ColumnDefault("current_timestamp()")
     @Column(name = "last_update", nullable = false)

@@ -1,4 +1,4 @@
-package fr.thomas.Filmtheque;
+package fr.thomas.Filmtheque.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

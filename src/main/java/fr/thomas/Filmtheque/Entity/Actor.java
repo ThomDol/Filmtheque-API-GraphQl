@@ -1,4 +1,4 @@
-package fr.thomas.Filmtheque;
+package fr.thomas.Filmtheque.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,14 +13,17 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "language")
-public class Language {
+@Table(name = "actor")
+public class Actor {
     @Id
-    @Column(name = "language_id", nullable = false)
-    private Byte id;
+    @Column(name = "actor_id", nullable = false)
+    private Short id;
 
-    @Column(name = "name", nullable = false, length = 20)
-    private String name;
+    @Column(name = "first_name", nullable = false, length = 45)
+    private String firstName;
+
+    @Column(name = "last_name", nullable = false, length = 45)
+    private String lastName;
 
     @ColumnDefault("current_timestamp()")
     @Column(name = "last_update", nullable = false)
