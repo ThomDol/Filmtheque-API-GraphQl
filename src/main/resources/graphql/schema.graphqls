@@ -11,6 +11,20 @@ type Film {
     actors: [Actor!]!
 }
 
+type Adress{
+    address: String!
+    city: City!
+}
+
+type City{
+    city: String!
+}
+
+type Store {
+    id: ID!
+    address: Adress
+}
+
 
 type Actor {
     id: ID!
@@ -21,11 +35,15 @@ type Actor {
 
 type Query {
     #Films
-    films: [Film!]!
-    film(id: ID!): Film
-    filmsByCategory(name : String!) : [Film!]!
+    Films: [Film!]!
+    Film(id: ID!): Film
+    FilmsByCategory(id: ID!) : [Film!]!
+    FilmsByStore(id: ID!): [Film!]!
 
     #Actors
     Actors: [Actor!]!
     Actor(id: ID!) : Actor
+
+    #Store
+    StoreGettingFilm(idFilm: ID!): [Store!]!
 }
