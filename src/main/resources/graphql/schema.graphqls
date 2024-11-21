@@ -21,6 +21,7 @@ type Actor {
     id: ID!
     firstName: String!
     lastName: String!
+    films: [Film!]!
 }
 
 type Query {
