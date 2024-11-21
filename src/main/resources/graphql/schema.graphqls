@@ -8,12 +8,8 @@ type Film {
     title: String!
     releaseYear: Int!
     language : Language!
-    actors: [Actor!]! # Exposé comme un champ virtuel
-
+    actors: [Actor!]!
 }
-
-
-
 
 
 
