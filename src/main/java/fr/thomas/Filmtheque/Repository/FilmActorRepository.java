@@ -1,5 +1,6 @@
 package fr.thomas.Filmtheque.Repository;
 
+import fr.thomas.Filmtheque.Entity.Actor;
 import fr.thomas.Filmtheque.Entity.Film;
 import fr.thomas.Filmtheque.Entity.FilmActor;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,4 +11,5 @@ import java.util.List;
 @Repository
 public interface FilmActorRepository extends JpaRepository<FilmActor,Long> {
     List<FilmActor> findByFilm (Film film);
+    List<FilmActor> findByActor (Actor actor);
 }

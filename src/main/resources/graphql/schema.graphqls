@@ -8,13 +8,8 @@ type Film {
     title: String!
     releaseYear: Int!
     language : Language!
-    actors: [Actor!]! # Exposé comme un champ virtuel
-
+    actors: [Actor!]!
 }
-
-
-
-
 
 
 type Actor {
@@ -25,7 +20,12 @@ type Actor {
 }
 
 type Query {
+    #Films
     films: [Film!]!
     film(id: ID!): Film
     filmsByCategory(name : String!) : [Film!]!
+
+    #Actors
+    Actors: [Actor!]!
+    Actor(id: ID!) : Actor
 }
